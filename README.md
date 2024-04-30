@@ -6,10 +6,6 @@
 In this tutorial, we observe various network traffic to and from Azure Virtual Machines with Wireshark as well as experiment with Network Security Groups. <br />
 
 
-<h2>Video Demonstration</h2>
-
-- ### [YouTube: Azure Virtual Machines, Wireshark, and Network Security Groups](https://www.youtube.com)
-
 <h2>Environments and Technologies Used</h2>
 
 - Microsoft Azure (Virtual Machines/Compute)
@@ -25,33 +21,34 @@ In this tutorial, we observe various network traffic to and from Azure Virtual M
 
 <h2>High-Level Steps</h2>
 
-- Step 1
-- Step 2
-- Step 3
-- Step 4
+- Create a Resource Group with a Linux and a Microsoft Windows VM on Azure
+- Within your Windows 10 Virtual Machine, Install Wireshark
+- Open the Network Security Group your Ubuntu VM is using and disable incoming (inbound) ICMP traffic
+- Observe different responses from SSh,ICMP, and DHCP traffic on wireshark
 
 <h2>Actions and Observations</h2>
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/erikcanorodriguez/azure-network-protocols/assets/168192619/48c73ea8-b8bb-46ca-b6eb-dc097fa3c6d5" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Firstly, we must initiate a perpetual/non-stop ping from our Windows 10 VM to our Ubuntu VM. We then head over to our main computer and go on Azure.com. From here we Open the Network Security Group your Ubuntu VM is using and disable incoming (inbound) ICMP traffic and observe the results.
+
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/erikcanorodriguez/azure-network-protocols/assets/168192619/71772d4c-d52a-4f2c-be79-bd60b17c4a37" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+Within our Windows 10 VM we had previously set a continuous ping from our Windows 10 VM to our Linux VM. We added the NSG rule to block any incoming ICMP traffic, notice how at first there was connectivity between the two but once the rule was set in motion no response was given.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/erikcanorodriguez/azure-network-protocols/assets/168192619/748db5ad-3bec-40d1-ae24-59cc43fe7af3" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+From here we can play around and notice the different responses we get from the different protocols (ICMP,SSH,DNS, DHCP,ETC.) In the above example we use SSH to essentially SSH our way and connect our Windows 10 VM and log into Linux. We are able to observe the traffic on wireshark when we type different commands on the Linux machine.
 </p>
 <br />
